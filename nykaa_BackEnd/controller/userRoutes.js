@@ -88,6 +88,8 @@ userRoute.get("/logout",async(req,res)=>{
                     res.status(200).send("logout successfull")
                 }
             }
+           }else{
+            res.status(404).send("Token missing . plz login.")
            }
         }else{
             res.status(404).send("Token missing")

@@ -1,6 +1,7 @@
 const path=require("path")
 const dotenv=require("dotenv").config()
 const express=require("express")
+const cors=require('cors')
  const { connection } = require("./db")
 const { userRoute } = require("./controller/userRoutes")
 const { productRoute } = require("./controller/productRoutes")
@@ -9,7 +10,8 @@ const { orderRoutes } = require("./controller/orderRoute")
 const port=process.env.port
 
 const app=express()
-
+app.use(express.json())
+app.use(cors())
 app.get("/",(req,res)=>{
     try {
         res.status(200).send("Wellcom to my Nykaa app")
@@ -18,7 +20,7 @@ app.get("/",(req,res)=>{
         console.log(error)
     }
 })
-app.use(express.json())
+
 app.use("/users",userRoute)
 
 app.use("/products",productRoute)
