@@ -102,7 +102,7 @@ userRoute.get("/logout",async(req,res)=>{
 userRoute.patch("/edit/:id",auth,async(req,res)=>{
     try {
         const {id}=req.params
-        const userid=req.userData.id
+        const userid=req.userData._id
         const data=req.body
         const user=await users.findOne({_id:id})
         if(user){
@@ -127,7 +127,7 @@ userRoute.patch("/edit/:id",auth,async(req,res)=>{
 userRoute.delete("/delete/:id",auth,async(req,res)=>{
     try {
         const {id}=req.params
-        const userid=req.userData.id
+        const userid=req.userData._id
         const user =await users.findOne({_id:id})
         if(user){
            if(id===userid.toString()){
