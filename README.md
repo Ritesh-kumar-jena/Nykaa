@@ -1,4 +1,4 @@
 # Nykaa
 
 ## Nykaa Backend URL
-- https://nykaa-1ecx.onrender.com
+- https://nykaa-kkh6.onrender.com
