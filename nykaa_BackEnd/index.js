@@ -14,7 +14,13 @@ const ai = new GoogleGenAI({ apiKey: process.env.Gemini_API_KEY });
 
 const app=express()
 app.use(express.json())
-app.use(cors())
+const corsOptions = {
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+};
+app.use(cors(corsOptions))
 app.get("/",(req,res)=>{
     try {
         res.status(200).send("Wellcom to my Nykaa app")
