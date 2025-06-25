@@ -21,6 +21,7 @@ const corsOptions = {
   credentials: true,
 };
 app.use(cors(corsOptions))
+app.options("*", cors(corsOptions))
 app.get("/",(req,res)=>{
     try {
         res.status(200).send("Wellcom to my Nykaa app")
