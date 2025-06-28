@@ -2,8 +2,8 @@
 
 const userAuth=(req,res,next)=>{
     try {
-        const {phoneNumber}=req.body
-        if(phoneNumber.length===10){
+        const {phone}=req.body
+        if(phone.length===10){
             next()
         }
         else{

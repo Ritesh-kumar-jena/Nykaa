@@ -12,31 +12,32 @@ const userRoute=express.Router()
 
 userRoute.post("/signIn",userAuth,async(req,res)=>{
     try {
-        const {name,email,pass,phoneNumber,role}=req.body
-        const user=await users.findOne({phoneNumber})
+        const {name,email,pass,phone,role}=req.body
+        const user=await users.findOne({phone})
         if(user){
-            res.status(404).send("This phoneNumber allready register")
+            res.status(404).send("This phone Number allready register")
         }
         else{
             bcrypt.hash(pass,5,async function(err,hash){
                 if(err){
                     res.status(404).send({msg:"error while hashing",err})
                 }else{
-                    const newUser=new users({name,email,pass:hash,phoneNumber,role})
+                    const newUser=new users({name,email,pass:hash,phone,role})
                     await newUser.save()
                     res.status(200).send("User register successfull")
                 }
             })
         }
     } catch (error) {
+        console.log(error)
         res.status(400).json(error)
     }
 })
 
 userRoute.post("/login",async(req,res)=>{
     try {
-        const {phoneNumber,pass}=req.body
-        const user=await users.findOne({phoneNumber})
+        const {phone,pass}=req.body
+        const user=await users.findOne({phone})
         if(user){   
            bcrypt.compare(pass,user.pass,function(err,result){
             if(result){
