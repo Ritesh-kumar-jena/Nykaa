@@ -43,7 +43,7 @@ userRoute.post("/login",async(req,res)=>{
             if(result){
                 const token=jwt.sign({id:user.id},process.env.key,{expiresIn:"1d"})
                 const reftoken=jwt.sign({id:user.id},process.env.key,{expiresIn:"7d"})
-                res.status(200).send({msg:`Welcome ${user.name.toUpperCase()}`,token:token,reftoken:reftoken})
+                res.status(200).send({msg:`Welcome ${user.name}`,token:token,reftoken:reftoken})
             }
             else{
                 res.status(404).send("wrong credentials")
