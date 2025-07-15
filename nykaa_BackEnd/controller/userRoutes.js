@@ -147,4 +147,23 @@ userRoute.delete("/delete/:id",auth,async(req,res)=>{
     }
 })
 
+userRoute.get("/profile/:id", auth, async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (id !== req.userData._id.toString()) {
+      return res.status(403).send("You are not authorized to view this profile");
+    }
+
+    const user = await users.findById(id).select("-pass");
+    if (user) {
+      res.status(200).send(user);
+    } else {
+      res.status(404).send("User not found");
+    }
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
+
 module.exports={userRoute}

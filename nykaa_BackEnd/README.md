@@ -41,6 +41,7 @@ This is the backend of the Nykaa Clone project, built using Node.js, Express, an
 | GET | `/users/logout` | Logout and blacklist tokens |
 | PATCH | `/users/edit/:id` | Edit user details |
 | DELETE | `/users/delete/:id` | Delete a user account |
+| GET | `/profile/:id` | Get the login user data |
 
 ### Product Routes (`/products`)
 | Method | Endpoint | Description |
