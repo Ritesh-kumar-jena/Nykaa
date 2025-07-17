@@ -25,15 +25,26 @@ const storage = new CloudinaryStorage({
     },
 });
 
-const upload = multer({ storage: storage });1
+const upload = multer({ storage: storage });
 
 productRoute.use(auth)
 
 productRoute.post("/addProducts",permissonAuth(["admin","seller"]),upload.single('image'),async(req,res)=>{
     try {
+        let imageUrl;
+        if (req.file) {
+        imageUrl = req.file.path;
+      }
+      else if (req.body.image) {
+        const uploaded = await cloudinary.uploader.upload(req.body.image, {
+          folder: "Nykaa_products",
+        });
+        imageUrl = uploaded.secure_url
+    }
+        
         const product=new products({
             ...req.body,
-            image:req.file.path
+            image:imageUrl
         })
         await product.save()
         res.status(200).send("Product added successfully")
