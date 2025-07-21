@@ -27,9 +27,7 @@ const storage = new CloudinaryStorage({
 
 const upload = multer({ storage: storage });
 
-productRoute.use(auth)
-
-productRoute.post("/addProducts",permissonAuth(["admin","seller"]),upload.single('image'),async(req,res)=>{
+productRoute.post("/addProducts",auth,permissonAuth(["admin","seller"]),upload.single('image'),async(req,res)=>{
     try {
         let imageUrl;
         if (req.file) {
@@ -54,7 +52,7 @@ productRoute.post("/addProducts",permissonAuth(["admin","seller"]),upload.single
     }
 })
 
-productRoute.patch("/editProducts/:id",permissonAuth(["admin","seller"]),async(req,res)=>{
+productRoute.patch("/editProducts/:id",auth,permissonAuth(["admin","seller"]),async(req,res)=>{
     try {
         const {id}=req.params
         const product=await products.findOne({_id:id})
@@ -71,7 +69,7 @@ productRoute.patch("/editProducts/:id",permissonAuth(["admin","seller"]),async(r
     }
 })
 
-productRoute.delete("/deleteProducts/:id",permissonAuth(["admin","seller"]),async(req,res)=>{
+productRoute.delete("/deleteProducts/:id",auth,permissonAuth(["admin","seller"]),async(req,res)=>{
     try {
         const {id}=req.params
         const product=await products.findOne({_id:id})
