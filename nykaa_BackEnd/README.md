@@ -75,7 +75,7 @@ This is the backend of the Nykaa Clone project, built using Node.js, Express, an
 
 ## Database Models
 - **User Model**: Stores user details (name, email, password, phone number, role)
-- **Product Model**: Stores product details (name, category, type, description, price, image)
+- **Product Model**: Stores product details (name, category, apply, type, price, image)
 - **Cart Model**: Stores cart items linked to users and products
 - **Order Model**: Stores order details with multiple items and order status
 
