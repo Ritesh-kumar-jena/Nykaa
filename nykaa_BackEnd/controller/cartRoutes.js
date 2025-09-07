@@ -40,24 +40,25 @@ cartRoutes.get("/mycart",async(req,res)=>{
 cartRoutes.post("/addtocart",async(req,res)=>{
     try {
         const user=req.userData._id
-        const {product,quantity}=req.body
-        if (!product || !quantity || quantity < 1) {
-            return res.status(400).send({ msg: "Invalid product or quantity" });
+        const quantity=1
+        const {product}=req.body
+        if (!product) {
+            return res.status(400).send({ msg: "Invalid product" });
           }
         const myProduct=await products.findOne({_id:product})
             if(myProduct){
                 const Incart=await cart.findOne({user,product})
                 if(Incart){
-                   const updateQuantity=quantity
+                   const updateQuantity=Incart.quantity+1
                    const productTotalPrice=myProduct.price*updateQuantity
                    await cart.findByIdAndUpdate({_id:Incart._id},{quantity:updateQuantity,productTotalPrice:productTotalPrice})
-                   res.status(200).send("product add to cart successfully")
+                   res.status(200).send({msg:"product add to cart successfully"})
                 }
                 else{
                        const productTotalPrice=myProduct.price*quantity
                        const newOrder=new cart({user:user,product:product,quantity:quantity,productTotalPrice:productTotalPrice})
                        await newOrder.save()
-                       res.status(200).send({msg:"order add to cart successfully"})
+                       res.status(200).send({msg:"product add to cart successfully"})
                     }
             }
             else{
