@@ -5,13 +5,14 @@ const { permissonAuth } = require("../Middelware/RoleBasedAccessControl_Auth")
 const { order } = require("../Model/ordersModel")
 const { products } = require("../Model/productModel")
 const { cart } = require("../Model/cartModel")
+const { users } = require("../Model/userModel")
 const orderRoutes=express.Router()
 
 orderRoutes.use(auth)
 
 orderRoutes.get("/allOrders",permissonAuth(["admin"]),async(req,res)=>{
     try {
-        const data=await order.find()
+        const data=await order.find().populate("user", "name email phone").populate("items.product", "name price image"); 
         if(data.length>0){
             res.status(200).send({Orders:data})
         }
@@ -26,7 +27,7 @@ orderRoutes.get("/allOrders",permissonAuth(["admin"]),async(req,res)=>{
 orderRoutes.get("/myOrders",async(req,res)=>{
     try {
         const userId=req.userData._id
-        const data=await order.find({user:userId})
+        const data=await order.find({user:userId}).populate("items.product", "name price image")
         if(data.length>0){
             res.status(200).send({myOrders:data})
         }
