@@ -13,7 +13,7 @@ const ordersSchema=mongoose.Schema({
     status:{
         type:String,
         enum: ["pending", "confirmed", "shipped", "delivered", "cancelled"],
-        default:"pending"
+        default:"confirmed"
     },
     address:{type:String,required:true}
    
