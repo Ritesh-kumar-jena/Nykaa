@@ -56,6 +56,9 @@ const ProductCategory = () => {
   const borderClr = useColorModeValue("gray.200", "gray.600");
   const applyTitleColor = useColorModeValue("gray.700", "gray.300");
   const linkHoverColor = useColorModeValue("pink.400", "pink.300");
+  const bgLight = ["gray.50", "gray.100"];
+  const bgDark = ["gray.700", "gray.600"];
+  const bgPair = useColorModeValue(bgLight, bgDark)
   
   if (loading) {
     return (
@@ -89,9 +92,9 @@ const ProductCategory = () => {
 
           <PopoverContent border="1px solid" borderColor={borderClr} p={4} bg={popoverBg} minW="500px">
             <PopoverBody>
-              <Grid templateColumns="repeat(3, 1fr)" gap={6}>
+              <Grid templateColumns={{base: "1fr 1fr", md: "1fr 1fr 1fr"}} gap={6}>
                 {Object.entries(applyMap).map(([applyTitle, types], idx) => (
-                  <Box key={idx}>
+                  <Box key={idx} bg={bgPair[idx % 2]} borderRight="1px solid" borderColor={borderClr}  p={3} borderRadius="md">
                     <Text fontWeight="semibold" color={applyTitleColor} mb={2}>
                       {applyTitle}
                     </Text>
