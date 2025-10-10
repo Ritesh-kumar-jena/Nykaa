@@ -30,7 +30,7 @@ function Allroutes() {
          <Route path="/cart" element={<Cart/>}/>
          <Route path="/orders" element={<Orders/>}/>
          <Route path="/billing" element={<Billing/>}/>
-         <Route path="/PrivacyPolicy" element={<PrivacyPolicy/>}/>
+         <Route path="/contactUs" element={<ContactUs/>}/>
          <Route path="/t&c" element={<TermsAndConditions/>}/>
          <Route path="/PrivacyPolicy" element={<PrivacyPolicy/>}/>
         <Route path="*" element={<NotFoundPage/>} />

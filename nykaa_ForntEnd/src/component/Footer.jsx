@@ -49,7 +49,8 @@ export default function Footer() {
           <Link 
           onClick={()=>{
             navigate("/contactUs")
-            window.scrollTo({ top: 0, behavior: "smooth" })}} 
+            window.scrollTo({ top: 0, behavior: "smooth" })
+          }} 
           fontSize="sm" 
           color="gray.700"
           >

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Input, Button, FormLabel, Select, useToast,Heading } from "@chakra-ui/react";
+import { Box, Input, Button, FormLabel, Select, useToast,Heading,useColorModeValue } from "@chakra-ui/react";
 import api from "../services/api";
 import { Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,7 @@ function Signup({ switchToLogin }) {
   const naviget=useNavigate()
   const tost=useToast()
   const [form,setForm]=useState({name:"",email:"",pass:"",role:"buyer",phone:""})
+  const textColor = useColorModeValue("gray.600", "gray.300")
   const handleChange=(e)=>{
   const {name,value}=e.target;
   setForm({...form,[name]:value})
@@ -58,7 +59,7 @@ function Signup({ switchToLogin }) {
       isDisabled={!form.name || !form.email || !form.pass || !form.phone }
       >Sign Up</Button>
       
-      <Text fontWeight="bold" color="gray.600" mb="2"><u>If already have account</u></Text>
+      <Text fontWeight="bold" color={textColor} mb="2"><u>If already have account</u></Text>
       <Button onClick={switchToLogin}  colorScheme="teal" _hover={{bg:"cyan.600",fontWeight:"bold"}}
       >Login</Button>
     </Box>

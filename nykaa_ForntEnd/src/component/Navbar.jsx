@@ -85,7 +85,19 @@ function Navbar() {
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-         search(query)
+      const trimmedQuery = query.trim();
+    if (!trimmedQuery) {
+      tost({
+        title: "Please enter your query.",
+        description: "Search box cannot be empty.",
+        status: "warning",
+        duration: 2000,
+        isClosable: true,
+        position: "top",
+      });
+      return;
+    }
+         search(trimmedQuery)
          setQuery("")
          setSuggestions([])
          window.scrollTo({ top: 0, behavior: "smooth" })

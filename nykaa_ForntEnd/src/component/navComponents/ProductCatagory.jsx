@@ -9,6 +9,7 @@ import {
   PopoverTrigger,
   PopoverContent,
   PopoverBody,
+   PopoverCloseButton,
   useColorModeValue,
   Skeleton,
   useBreakpointValue
@@ -54,8 +55,10 @@ const ProductCategory = () => {
   const textColor = useColorModeValue("black", "white");
   const popoverBg = useColorModeValue("white", "gray.800");
   const borderClr = useColorModeValue("gray.200", "gray.600");
-  const applyTitleColor = useColorModeValue("gray.700", "gray.300");
+  const applyTitleColor = useColorModeValue("gray.700", "gray.200");
+  const itemColor = useColorModeValue("gray.500", "gray.300");
   const linkHoverColor = useColorModeValue("pink.400", "pink.300");
+  const closeButtonBg =useColorModeValue("gray.100", "gray.700")
   const bgLight = ["gray.50", "gray.100"];
   const bgDark = ["gray.700", "gray.600"];
   const bgPair = useColorModeValue(bgLight, bgDark)
@@ -90,17 +93,25 @@ const ProductCategory = () => {
             </Box>
           </PopoverTrigger>
 
-          <PopoverContent border="1px solid" borderColor={borderClr} p={4} bg={popoverBg} minW="500px">
+          <PopoverContent border="1px solid" borderColor={borderClr} p={4} bg={popoverBg} minW="500px" position="relative">
+            <PopoverCloseButton
+              display={{ base: "block", md: "none" }}
+              top="6px"
+              left="6px"       
+              right="unset"    
+              borderRadius="full"
+              _hover={{ bg:closeButtonBg }}
+              />
             <PopoverBody>
               <Grid templateColumns={{base: "1fr 1fr", md: "1fr 1fr 1fr"}} gap={6}>
                 {Object.entries(applyMap).map(([applyTitle, types], idx) => (
                   <Box key={idx} bg={bgPair[idx % 2]} borderRight="1px solid" borderColor={borderClr}  p={3} borderRadius="md">
-                    <Text fontWeight="semibold" color={applyTitleColor} mb={2}>
+                    <Text fontWeight="bold" color={applyTitleColor} mb={2}>
                       {applyTitle}
                     </Text>
                     <Stack spacing={1}>
                       {types.map((typeItem, i) => (
-                        <Link key={i} onClick={()=>{
+                        <Link key={i} color={itemColor} onClick={()=>{
                           filterByType(typeItem)
                           navigate("/")
                           window.scrollTo({ top: 0, behavior: "smooth" })

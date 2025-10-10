@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box, Heading, Text, Button } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { ProductContext } from "../contex/ProductContextProvider";
 
 function NotFoundPage() {
+  const {resetFilter}=useContext(ProductContext)
     const navigate=useNavigate()
   return (
     <Box textAlign="center" py={10} px={6}>
@@ -12,6 +14,7 @@ function NotFoundPage() {
       <Text mb={6}>Oops! The page you’re looking for does not exist.</Text>
       <Button
         onClick={()=>{
+          resetFilter()
           navigate("/")
           window.scrollTo({ top: 0, behavior: "smooth" })
         }}
