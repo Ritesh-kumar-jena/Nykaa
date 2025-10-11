@@ -158,6 +158,7 @@ Visit `http://localhost:5173` (or shown port) to see the app.
 
 ---
 
+## Deployed Link :- https://bright-raindrop-284891.netlify.app/
 
 ## 💼 Author
 
