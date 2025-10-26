@@ -1,7 +1,7 @@
 # Nykaa
 
 ## Nykaa Frontend Deployed Link 
--  https://bright-raindrop-284891.netlify.app/
+-  https://ritesh-kumar-jena-n-y-k-a-a-clone.netlify.app/
 
 ## Nykaa Backend URL
 - https://nykaa-i3po.onrender.com
