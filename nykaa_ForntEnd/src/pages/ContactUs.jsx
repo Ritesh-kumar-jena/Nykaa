@@ -30,7 +30,7 @@ export default function ContactUs() {
             <strong>Name:</strong> Ritesh Kumar Jena
           </Text>
           <Text fontSize="lg" color={textColor}>
-            <strong>Project:</strong> Nykaa Clone
+            <strong>Project:</strong> E-Commerce Platform for Beauty & Skincare (Inspired by Nykaa)
           </Text>
           <Text fontSize="lg" color={textColor}>
             <strong>Email:</strong> <a style={{color: btnColor}}>jenariteshkumar85@gmail.com</a>
