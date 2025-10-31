@@ -27,7 +27,8 @@ function PrivacyPolicy() {
         </Text>
 
         <Text color={textColor} fontSize="md" lineHeight="tall">
-          This is a clone project built for learning and portfolio purposes.
+          This project is developed for learning and portfolio demonstration purposes only.
+          It is not affiliated with or endorsed by Nykaa.
         </Text>
 
         <Text color={textColor} fontSize="md" lineHeight="tall">

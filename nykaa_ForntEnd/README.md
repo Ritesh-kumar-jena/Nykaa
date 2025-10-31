@@ -1,6 +1,6 @@
 # 🛒 Nykaa – Frontend 
 
-A responsive Nykaa clone frontend built with **React** and **Chakra UI**, featuring dynamic product categories, search with suggestions, dark mode, wishlist, payment with order placement, and user authentication UI. It also has a static HTML/CSS/JS version demonstrating the responsive design and interactive components.
+A responsive E-Commerce Platform for Beauty & Skincare (Inspired by Nykaa) frontend built with **React** and **Chakra UI**, featuring dynamic product categories, search with suggestions, dark mode, wishlist, payment with order placement, and user authentication UI. It also has a static HTML/CSS/JS version demonstrating the responsive design and interactive components.
 
 ---
 

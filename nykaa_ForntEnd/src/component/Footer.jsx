@@ -154,7 +154,7 @@ export default function Footer() {
       {/* Bottom Strip */}
       <Flex px={10} py={4} justify="space-between" align="center" wrap="wrap" bg="pink.400" borderRadius="20px 20px 0 0">
         <Text fontSize="sm" color="gray.700">
-          © {new Date().getFullYear()} Nykaa Clone. All rights reserved.
+          © {new Date().getFullYear()} Nykaa. Educational Project. All rights reserved.
         </Text>
         <Text fontSize="sm" color="gray.700" mt={{base:"5",md:"0"}} >
           Made with ❤️ by Ritesh

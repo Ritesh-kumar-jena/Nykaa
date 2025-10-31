@@ -15,8 +15,9 @@ export default function TermsAndConditions() {
       <Heading mb={4} textAlign="center">Terms & Conditions</Heading>
       <Stack spacing={4}>
         <Text>
-          This is a clone project for learning and portfolio purposes. All products,
-          images, and content are used for demonstration only.
+          This project is created for educational and portfolio demonstration purposes only. 
+          It is not affiliated with or endorsed by Nykaa. 
+          All products, images, and content are used for non-commercial demonstration.
         </Text>
         
         <Text>

@@ -1,7 +1,7 @@
 # Nykaa Backend
 
 ## Overview
-This is the backend of the Nykaa Clone project, built using Node.js, Express, and MongoDB. The backend includes user authentication, product management, cart functionality, and order processing. It also integrates Cloudinary for image uploads and JWT for authentication.
+This is the backend of the E-Commerce Platform for Beauty & Skincare (Inspired by Nykaa), built using Node.js, Express, and MongoDB. The backend includes user authentication, product management, cart functionality, and order processing. It also integrates Cloudinary for image uploads and JWT for authentication.
 
 ## Features
 - User Authentication (Signup, Login, Logout)
