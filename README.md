@@ -37,7 +37,7 @@
 
 | Footer |
 |--------|
-| ![Footer](https://res.cloudinary.com/dy9gltg7s/image/upload/v1759537373/Screenshot_2025-10-04_052004_bhysaa.png) |
+| ![Footer](https://res.cloudinary.com/dy9gltg7s/image/upload/v1761932831/Screenshot_2025-10-31_231337_bwl7wn.png) |
 
 
 ---
