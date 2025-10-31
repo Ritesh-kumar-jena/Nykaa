@@ -1,7 +1,7 @@
 # Nykaa
 
 ## Nykaa Frontend Deployed Link 
--  https://ritesh-kumar-jena-n-y-k-a-a-clone.netlify.app/
+-  https://n-y-k-a-a-platform-by-ritesh.netlify.app/
 
 ## Nykaa Backend URL
 - https://nykaa-i3po.onrender.com
